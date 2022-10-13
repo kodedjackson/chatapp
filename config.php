@@ -1,9 +1,13 @@
 <?php
 
-$dbHost ='localhost';
-$dbUsername ='root';
-$dbPassword ='';
-$dbDatabase ='kodedchat';
-$conn=mysqli_connect($dbHost,$dbUsername,$dbPassword,$dbDatabase);
+define('dbHost', 'localhost');
+define('dbUsername','root');
+define('dbPassword','');
+define('dbDatabase','kodedchat');
+define('HOMEPAGE', 'http://localhost/chatapp/');
+
+
+$conn=mysqli_connect(dbHost, dbUsername, dbPassword, dbDatabase);
+
 
 ?>

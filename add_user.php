@@ -14,7 +14,7 @@ $query = mysqli_query($conn, $sql);
 
 if($query==TRUE)
 {
-echo 'data submitted';
+    header('location:'.HOMEPAGE.'signin.php');
 
 
 }

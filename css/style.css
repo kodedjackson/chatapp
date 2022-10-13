@@ -54,13 +54,11 @@ button{
 #cardsignin{
     height: 350px;
 }
-
 .success{
-    color: green;
+    color: #2ed573;
 }
-
 .error{
-    color: red;
+    color: #ff4757;
 }
 
 

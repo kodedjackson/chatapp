@@ -10,16 +10,16 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <style>
     body{
-        background-image:url('images/home.jpg');
-        background-repeat: repeat-y;
-        width:100%;
+      background-image:url('images/home.jpg');
+      background-repeat: repeat-y;
+      width:100%;
     }
     .navbar-inverse {
-        background-color: #3b173da8;
-        border-color: #3b173da8; 
+      background-color: #3b173da8;
+      border-color: #3b173da8; 
     }
     .navbar-inverse .navbar-brand {
-        color: white;
+      color: white;
     }
     a:hover{
         color: #50546d;

@@ -59,7 +59,7 @@ color:white;
 ?>
 		<div class="message">
 			<p>
-				<span id="nameSpan"><?php echo $row['name']; ?> :</span>
+				<span id="nameSpan"><?php echo $row['name']; ?>:</span>
 				<span id="messageSpan"> <?php echo $row['message']; ?></span>
 			</p>
 		</div>

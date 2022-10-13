@@ -81,9 +81,9 @@ nav{
     position: relative;
     margin: 10px auto;
     border-radius: 10px;
-    background-color: var(--color-yellow);
+    background-color: var(--color-darker);
     box-shadow: 5px 5px 30px rgba(0,0,0, 0.4);
-    height: 500px;
+    height: 100%;
     width: 40%
 }
 
@@ -115,9 +115,15 @@ input{
    
 }
 
+.success{
+    color: #2ed573;
+}
+.error{
+    color: #ff4757;
+}
+
 textarea{
-    width: 300px;
-    height: 90px;
+    width: 100%;
 }
 span{
     background-color: orangered;

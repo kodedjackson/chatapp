@@ -1,12 +1,29 @@
-<?php include('config') ?>
+<?php include('config.php'); ?>
 
-<?php 
-$message = $_POST['message'];
+<?php
 
-$sql = "INSERT INTO `chats`(`name`, `message`) VALUES ('[value-2]','$message')";
+session_start();
+$name = $_SESSION['name'];
+$message =$_POST['message'];
 
-$sql = mysqli_query($conn, $)
+if($message != ''){
+    
+    $sql = "INSERT INTO `chats`(`name`, `message`) VALUES ('$name','$message')";
 
+    $qry = mysqli_query($conn, $sql);
+    if($qry == True)
+    {
+        //echo "message submitted";
+        header('location:'.HOMEPAGE.'chathome.php');
 
+    }
+    else
+    {
+        echo "message error";
+    }
 
+}
+else{
+    echo "Please type a message";
+}
 ?>

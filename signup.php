@@ -24,7 +24,7 @@
         <div class="container">
             <img src="images/logo2.svg" alt="kodedchat" width="150px">
                 <h2>SIGN UP HERE</h2>
-                <form method="POST" accept="add_user.php">
+                <form method="POST" action="add_user.php">
                     <label for="full_name">Full name</label><br>
                     <input type="text" id="fullname" placeholder="What is your full name?" name="fullname"><br>
 
