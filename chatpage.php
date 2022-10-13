@@ -1,3 +1,7 @@
+<head>
+	<title>PLAYMATE</title>
+</head>
+
 <?php 
 	session_start();
 	if(isset($_SESSION['name']))
