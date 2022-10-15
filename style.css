@@ -81,12 +81,13 @@ nav{
     position: relative;
     margin: 10px auto;
     border-radius: 10px;
-    background-color: var(--color-darker);
+    background-color: var(--color-yellow);
     box-shadow: 5px 5px 30px rgba(0,0,0, 0.4);
-    height: 100%;
-    width: 40%
+    width: 40%;
 }
-
+#submit{
+    margin-bottom: 20px;
+}
 button{
     background-color: var(--color-red);
     color: whitesmoke;
@@ -101,6 +102,10 @@ input{
     width: 70%;
     height: 40px;
     border: 10px red;
+}
+
+p{
+    padding: 10px 10px;
 }
 
 #bgVideo{
@@ -133,7 +138,6 @@ span{
     text-align: left;
     border-radius: 0 50px 50px 0;
     width: 50%;
-    margin: 20px 0;
     color: whitesmoke;
 
 }
