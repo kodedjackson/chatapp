@@ -12,7 +12,7 @@
             <!-- <a href="index.html"><img src="images/logo2.svg" width="150px" height="100px"></a>  -->
             <div class="nav-links">
                 <ul>
-                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="chathome.php">HOME</a></li>
                     <li><a href="chathome.php">CHAT</a></li>
                     <li><a href="profile.php">PROFILE</a></li>
                 </ul>

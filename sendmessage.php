@@ -4,7 +4,7 @@
 
 session_start();
 $name = $_SESSION['name'];
-$message =$_POST['message'];
+$message = mysqli_real_escape_string($conn, $_POST['message']);
 
 if($message != ''){
     

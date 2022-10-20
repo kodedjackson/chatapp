@@ -55,9 +55,30 @@ else
             
         </div>
         <div class="messages">
+            <style>
+                textarea{
+                    width: 100%;
+                    height: 100px;
+                    padding: 12px 20px;
+                    box-sizing: border-box;
+                    border: 2px solid, #ccc;
+                    border-radius: 16px;
+                    resize: none;
+                }
+                
+                button{
+                    background-color: var(--color-red);
+                    color: whitesmoke;
+                    padding: 10px;
+                    border-radius: 8px;
+                    border: none;
+                    margin-top: 10px;
+                    padding: 0px;
+                }
+            </style>
             <form method="POST" action="sendmessage.php">
-                <textarea placeholder="Type your message here ..." id="inputTextArea" name="message"></textarea>
-                <button type="submit" name="submit" id="submit">SEND</button>
+                <textarea maxlength='280' placeholder="Type your message heres ..." id="inputTextArea" name="message"></textarea>
+                <button type="submit" name="submit">SEND</button>
             </form>
         </div>
         </div>

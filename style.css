@@ -61,6 +61,13 @@ nav{
 
 
 }
+
+.nav-links li:active{
+    content: " ";
+    width: 3px;
+}
+
+
 .nav-links li:hover::after{
     width: 100px;
 }
@@ -79,15 +86,15 @@ nav{
 .container{
     text-align: center;
     position: relative;
-    margin: 10px auto;
+    margin: 5px auto;
     border-radius: 10px;
     background-color: var(--color-yellow);
     box-shadow: 5px 5px 30px rgba(0,0,0, 0.4);
-    width: 40%;
+    width: 60%; 
+    padding-left: 10%;
+    padding-right: 10%;
 }
-#submit{
-    margin-bottom: 20px;
-}
+
 button{
     background-color: var(--color-red);
     color: whitesmoke;
@@ -121,6 +128,13 @@ p{
    
 }
 
+.display-chat{
+    height: 300px;
+    margin-bottom: 4%;
+    overflow: auto;
+    margin-top: 0px;
+}
+
 .success{
     color: #2ed573;
 }
@@ -146,13 +160,10 @@ span{
 #liName{
     background-color: green;
     padding-bottom: 15px;
-    
-
 }
 
 #liMessage{
     background-color: blue;
-    
 }
 @media (max-width: 700px) {
     .nav-links li a {
@@ -168,7 +179,7 @@ span{
     }
     .container{
         width: 70%;
-        margin-top: 70px;
+        margin-top: 15px;
     }
     #bgVideo{
         margin: auto;
@@ -176,4 +187,10 @@ span{
         height: 100%;
         object-fit: cover;
     }
+    #liName{
+        width: 100%;
+        border-radius: 5px;
+        margin: 0px;
+    }
+
 }
