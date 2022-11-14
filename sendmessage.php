@@ -1,20 +1,20 @@
-<?php include('config.php'); ?>
+<?php include('partials/config.php'); ?>
 
 <?php
-
-session_start();
+$timestamp = date('h:i:a'); 
 $name = $_SESSION['name'];
-$message = mysqli_real_escape_string($conn, $_POST['message']);
+$message =$_POST['message'];
+
 
 if($message != ''){
     
-    $sql = "INSERT INTO `chats`(`name`, `message`) VALUES ('$name','$message')";
+    $sql = "INSERT INTO `chats`(`name`, `message`, `time`) VALUES ('$name','$message', '$timestamp')";
 
     $qry = mysqli_query($conn, $sql);
     if($qry == True)
     {
         //echo "message submitted";
-        header('location:'.HOMEPAGE.'chathome.php');
+                 header('location:'.HOMEPAGE.'chathome.php');
 
     }
     else

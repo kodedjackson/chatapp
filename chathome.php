@@ -1,49 +1,33 @@
-<?php include('config.php'); ?>
+<?php include('partials/config.php'); ?>
+<?php include('partials/menu.php') ?>
+<?php include('partials/check.php');?>
 <?php 
- $sql= "SELECT * FROM `chats` ";
+ $sql= "SELECT * FROM `messages` ";
  $query = mysqli_query($conn, $sql);
 
 ?>
-<?php include('partials/menu.php'); 
 
-?>
-
-<?php 
-
-session_start();
-if(isset($_SESSION['name']))
-{
-    //unset($_SESSION['login']);
-}
-else
-{
-    //echo "You need to login to access this page";
-    header('location:'.HOMEPAGE.'signin.php');
-}
-
-?>
-<title>Signup</title>
-<body>
+<title>Welcome</title>
     <video id="bgVideo" autoplay muted loop>
         <source src="bgvideo.mp4" type="video/mp4">
     </video>
     <div class="container">
-        <center><h2>Welcome <span style="color:#dd7ff3;"><br><?php echo $_SESSION['name'] ?></span></h2>
-        <button class='success'><a href="logout.php">LOGOUT</a></button><br>
+        <center><h2>Welcome <span style="color:white;"><br><?php echo $_SESSION['username'] ?></span></h2>
+        <a href="logout.php"><button class="btn btn-danger">Logout</button></a><br>
 	    <label>Join the chat</label>
         
         </center></br>
-        <div class="display-chat">
+        <div class="display-chat" id="display-chat">
             <?php 
                 if(mysqli_num_rows($query)>0)
                 {
                     while($rows = mysqli_fetch_assoc($query))
                     {
+                        $timestamp = $rows['time'];
             ?>
                         <div class="messages">
                                 <p>
-                                <p class="chatlists" id="liName"><span><?php echo $rows['name']; ?></span><br> <?php echo $rows['message'] ?>
-                               <!--  <p class="chatlists" id="liMessage"> ?></p> -->
+                                <p class="chatlists" id="liName"><span><?php echo $rows['name']."<span class='givespace'></span>".$timestamp; ?></span><br> <?php echo $rows['message'] ?>
                             </p>
                         </div>
             <?php
@@ -55,35 +39,20 @@ else
             
         </div>
         <div class="messages">
-            <style>
-                textarea{
-                    width: 100%;
-                    height: 100px;
-                    padding: 12px 20px;
-                    box-sizing: border-box;
-                    border: 2px solid, #ccc;
-                    border-radius: 16px;
-                    resize: none;
-                }
+            <div class="form-wrapper">
+                <form class="form" method="POST" action="sendmessage.php">
                 
-                button{
-                    background-color: var(--color-red);
-                    color: whitesmoke;
-                    padding: 10px;
-                    border-radius: 8px;
-                    border: none;
-                    margin-top: 10px;
-                    padding: 0px;
-                }
-            </style>
-            <form method="POST" action="sendmessage.php">
-                <textarea maxlength='280' placeholder="Type your message heres ..." id="inputTextArea" name="message"></textarea>
-                <button type="submit" name="submit">SEND</button>
-            </form>
-        </div>
-        </div>
-        
+                <input class="form-control"  id="val" name="message" class="input-msg" maxlength="280" placeholder="Type your message here" autocomplete="off" autofocus></input>
+                <button><i class="fa fa-paper-plane"></i></button>
+            </form>              
+            </div>  
+        </div>        
     
     </div>
-</body>                     
-</html>
+<!--  <script>
+<    //document.getElementById('display-chat').scrollIntoView({behavior: 'smooth', block: 'end'});
+<    var dis = document.getElementById('display-chat');
+<    dis.scrollTop = scroll.scrollTop;
+<    scroll.animate({scrollTop: scroll.scrollTop});
+<    //alert('Hello world');
+<</script> -->

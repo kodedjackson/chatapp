@@ -1,9 +1,15 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  background: none;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
 }
-
 
 body{
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -49,7 +55,7 @@ nav{
     font-size: 1rem;
 
 }
-
+/* 
 .nav-links li::after{
     content: " ";
     width: 3px;
@@ -64,14 +70,19 @@ nav{
 
 .nav-links li:active{
     content: " ";
-    width: 3px;
+    width: 2px;
 }
 
 
 .nav-links li:hover::after{
     width: 100px;
 }
-
+ */
+.fa-paper-plane{
+    background-color: var(--color-error);
+    font-size: 20px;
+    width: 40px;
+}
 
 .form-container{
     color: #000;
@@ -80,13 +91,14 @@ nav{
     background-size: cover;
     justify-content: center;
     align-items: center;
+    padding-bottom: 50px;
 
 } 
 
 .container{
     text-align: center;
     position: relative;
-    margin: 5px auto;
+    margin: 15px auto;
     border-radius: 10px;
     background-color: var(--color-yellow);
     box-shadow: 5px 5px 30px rgba(0,0,0, 0.4);
@@ -95,22 +107,32 @@ nav{
     padding-right: 10%;
 }
 
+
+#bgVid{
+    height: 100%;
+    overflow: auto;
+
+}
 button{
-    background-color: var(--color-red);
+    background-color: var(--color-error);
     color: whitesmoke;
     padding: 10px;
     border-radius: 8px;
     border: none;
     margin-top: 10px;
-    padding: 0px;
+    font-size: 2rem;
 }
 
 input{
-    border-radius: 10px;
     width: 70%;
     height: 40px;
     border: 10px red;
+    background-color: bisque;
+    display: inline;
+    padding: 20px;
 }
+
+
 
 p{
     padding: 10px 10px;
@@ -142,9 +164,6 @@ p{
     color: #ff4757;
 }
 
-textarea{
-    width: 100%;
-}
 span{
     background-color: orangered;
     color: whitesmoke;
@@ -165,6 +184,48 @@ span{
 #liMessage{
     background-color: blue;
 }
+#val{
+    width: 90%;
+    display: inline;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+}
+
+button{
+    background-color: var(--color-red);
+    color: whitesmoke;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 10px;
+    padding: 0px;
+}
+.compose-conversation{
+    display: flex;
+    flex-direction: row;
+}
+/* 
+.send {
+  background: #FEB822;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 50px 10 30px;
+  border-radius: 5vh;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  z-index: 1;
+  width: 80px;
+  transition: ease-in-out 1.3s;
+  padding: 15px;
+}
+
+  .givespace{
+    padding: 0 5px;
+    margin: 0 5px;
+}
+
+ */
 @media (max-width: 700px) {
     .nav-links li a {
         font-size: 1rem;
@@ -178,7 +239,7 @@ span{
         display: none;
     }
     .container{
-        width: 70%;
+        width: 80%;
         margin-top: 15px;
     }
     #bgVideo{
