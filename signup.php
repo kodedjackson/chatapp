@@ -1,6 +1,11 @@
-<?php include('partials/menu.php') ?>
-<?php include('partials/config.php') ;?>
 
+
+
+<?php 
+
+echo "Hello world";
+
+?>
     </div>
     <div class="form-container">
         <div class="container">
@@ -23,7 +28,7 @@
                     <label for="password">Password</label><br>
                     <input type="password" id="password" name="password" ><br>
                 
-                    <label>Set Profile Picture</label>
+                    <label>Set Profile Pictures</label>
                     <input type="file" accept="image/*" name="profile_pics"><br>
 
                     <button class="btn btn-primary" id="submit" type="submit" name="submit">SIGN UP</button>

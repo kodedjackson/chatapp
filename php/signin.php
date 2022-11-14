@@ -1,4 +1,4 @@
-<?php include "../config.php";?>
+<!-- <?php include "../config.php";?> -->
 <?php 
 
 $email = mysqli_real_escape_string($conn,  $_POST['email']);
@@ -24,11 +24,6 @@ if(!empty($email) && !empty($password)){
     }else{
         echo "That's not an email address";
     }
-
-
-
-
-
 
 
 
