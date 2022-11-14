@@ -1,9 +1,10 @@
+<?php 
+include "partials/menu.php";
 
-
+?>
 
 <?php 
 
-echo "Hello world";
 
 ?>
     </div>
@@ -13,7 +14,7 @@ echo "Hello world";
                 <h2>SIGN UP HERE!</h2>
                 <span id="error-txt"></span>
                 <form method="POST" action="#" id="form" enctype="multipart/form-data" class="form">
-                    <label for="full_name">Full name</label><br>
+                    <label for="full_name">Full names</label><br>
                     <input type="text" id="fullname" placeholder="What is your full name?" name="fullname"><br>
 
                     <label for="username">Username</label><br>

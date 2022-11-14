@@ -13,10 +13,8 @@
 
 body{
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url('images/logo2.svg');
-    background-size: cover;
-    height: 100vh;
-    background-position: center;
+    justify-content: center;
+    display: flex;
 }
 
 :root{
@@ -27,6 +25,45 @@ body{
     --color-error: rgb(255, 0, 0);
 }
 
+.wrapper{
+    background: ffff;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 20px;
+    box-shadow: 0 0 208px 0 rgba(4,9,30,0.7),
+                0 32px 64px 48px rgba(4,9,30,0.7)
+
+}
+
+.wrapper .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    background-color: #333;
+    color: white;
+    border-radius: 10px 10px 0 0 ;
+
+}
+
+
+.wrapper .nav img{
+    object-fit: contain;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.wrapper .nav li{
+    color: #fff;
+    margin: 10px 30px;
+}
+
+
+
+
+
+/* 
 .header{
     width: 100%;
 }
@@ -55,29 +92,6 @@ nav{
     font-size: 1rem;
 
 }
-/* 
-.nav-links li::after{
-    content: " ";
-    width: 3px;
-    height: 4px;
-    background-color: var(--color-yellow);
-    display: block;
-    margin: auto;
-    transition: 0.7s;
-
-
-}
-
-.nav-links li:active{
-    content: " ";
-    width: 2px;
-}
-
-
-.nav-links li:hover::after{
-    width: 100px;
-}
- */
 .fa-paper-plane{
     background-color: var(--color-error);
     font-size: 20px;
@@ -96,23 +110,20 @@ nav{
 } 
 
 .container{
+    display: flex;
     text-align: center;
     position: relative;
     margin: 15px auto;
     border-radius: 10px;
     background-color: var(--color-yellow);
     box-shadow: 5px 5px 30px rgba(0,0,0, 0.4);
-    width: 60%; 
+    width: 50%; 
     padding-left: 10%;
     padding-right: 10%;
+    height: 100vh;
 }
 
 
-#bgVid{
-    height: 100%;
-    overflow: auto;
-
-}
 button{
     background-color: var(--color-error);
     color: whitesmoke;
@@ -138,17 +149,6 @@ p{
     padding: 10px 10px;
 }
 
-#bgVideo{
-    position: fixed;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    margin-top: -600px;
-    top: 0;
-    bottom: 0;
-   
-}
 
 .display-chat{
     height: 300px;
@@ -204,28 +204,6 @@ button{
     display: flex;
     flex-direction: row;
 }
-/* 
-.send {
-  background: #FEB822;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 50px 10 30px;
-  border-radius: 5vh;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  z-index: 1;
-  width: 80px;
-  transition: ease-in-out 1.3s;
-  padding: 15px;
-}
-
-  .givespace{
-    padding: 0 5px;
-    margin: 0 5px;
-}
-
- */
 @media (max-width: 700px) {
     .nav-links li a {
         font-size: 1rem;
@@ -254,4 +232,4 @@ button{
         margin: 0px;
     }
 
-}
+} */
