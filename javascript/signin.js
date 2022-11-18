@@ -1,6 +1,9 @@
-const form = document.getElementById('form'),
-submitBtn = form.querySelector('form button'),
-errorText= document.getElementById('error-txt');
+const form = document.querySelector(".login form"),
+submitBtn = form.querySelector('.button input');
+
+
+errorText= document.querySelector(".error-txt");
+
 
 
 form.onsubmit = (e) =>{
@@ -9,22 +12,22 @@ form.onsubmit = (e) =>{
 }
 
 submitBtn.onclick = ()=>{
-    console.log('Yellllwoednbenjbfjjf ');
-    /* let xhr = new XMLHttpRequest(); 
-    xhr.open("POST", "../php/signin.php", true);
+  let xhr = new XMLHttpRequest(); 
+    xhr.open("POST", "check_signin.php", true);
     xhr.onload = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){
               let data = xhr.response;
-              console.log(data)
               if(data == "success"){
-                location.href="chathome.php";
+                location.href="chats.php";
               }else{
                 errorText.textContent = data;
+                errorText.style.display = 'block';
+                
               }
           }
       }
     }
     let formData = new FormData(form);
-    xhr.send(formData); */
+    xhr.send(formData);
 }

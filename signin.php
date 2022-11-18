@@ -1,43 +1,42 @@
-<?php include('partials/menu.php') ?>
-<?php include('partials/config.php') ;?>
-<div class="form-container">
-    <div class="container">
-        <img src="images/logo2.svg" alt="kodedchat" width="150px">
-            <h2>SIGN IN</h2>
-            <div>
-                <?php 
-                if(isset($_SESSION['login']))
-                {
-                   echo $_SESSION['login'];
-                   unset($_SESSION['login']);
-                }
-                if(isset($_SESSION['no-login-found'])){
-                    echo $_SESSION['no-login-found'];
-                    unset($_SESSION['no-user-found']);
-                }
-                if(isset($_SESSION['no-login-message'])){
-                    echo $_SESSION['no-login-message'];
-                    unset($_SESSION['no-login-message']);
-                }
-                ?>
-                <style> 
-                .error{
-                    color: red;
-                }
-                .sucess{
-                    color: green;
-                }
-            </style>
-            </div>
-            <span id="error-txt"></span>
-            <form method="POST" action="#" id="form">
-                <label for="email">Email</label><br>
-                <input type="email" id="email" name="email" placeholder="Your email"><br>
-                <label for="password">Password</label><br>
-                <input type="password" id="password" name="password" ><br>
-                <button class="btn btn-primary" type="submit" name="submit" id="submit">SIGN IN</button>
-            </form>
-            <a href="signup.php"><button class="btn btn-default">or sign up here</button></a>
-    </div>
-</div>
-<script src="javascript/signin.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome\css\fontawesome.css">
+    <link rel="stylesheet" href="fontawesome\css\all.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>PlayMate</title>
+</head>
+<body>
+    <main class="wrapper">
+        <header>
+            <nav class="nav">
+                <h1>PLAYMATE</h1>    
+            </nav>
+        </header>
+        <div class="error-txt"></div>
+        <section class="form login">
+                <form action="#"  id="form">
+                    <div class="field input">
+                        <label for="">Email</label>
+                        <input type="text" name="email">
+                    </div>
+                    <div class="field input">
+                        <label for="">Password</label>
+                        <input type="password" name="password">
+                    </div> 
+                    <div class="field button">
+                        <input type="submit" accept="images/" id="submit" name="submit" value="SIGN IN">
+                    </div>
+                </form>
+                <div class="link">Don't have an account? <a href="signup.php">sign up instead</a></div>
+        </section>
+
+    </main>
+    <script src="javascript/signin.js"></script>
+    
+</body>
+</html>

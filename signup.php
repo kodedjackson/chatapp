@@ -1,44 +1,60 @@
-<?php 
-include "partials/menu.php";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome\css\fontawesome.css">
+    <link rel="stylesheet" href="fontawesome\css\all.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>PlayMate</title>
+</head>
+<body>
+<main class="wrapper">
+        <header>
+            <nav class="nav">
+                <h1>PLAYMATE</h1>    
+            </nav>
+        </header>
+        <div class="error-txt"></div>
+        <section class="form signup">
+                <form action="#" enctype="multipart/form-data" id="form" name="form">
+                    <div class="name-details">
+                        <div class="field input">
+                            <label >First Name</label>
+                            <input type="text" name="first_name">
+                        </div>
+                        <div class="field input">
 
-?>
-
-<?php 
-
-
-?>
-    </div>
-    <div class="form-container">
-        <div class="container">
-            <img src="images/logo2.svg" alt="kodedchat" width="150px">
-                <h2>SIGN UP HERE!</h2>
-                <span id="error-txt"></span>
-                <form method="POST" action="#" id="form" enctype="multipart/form-data" class="form">
-                    <label for="full_name">Full names</label><br>
-                    <input type="text" id="fullname" placeholder="What is your full name?" name="fullname"><br>
-
-                    <label for="username">Username</label><br>
-                    <input type="text" id="username" name="username" placeholder="Pick a username"><br>
-
-                    <label for="email">Email</label><br>
-                    <input type="email" id="email" name="email" placeholder="Your email"><br>
-
-                    <label for="phone_number">Phone Number</label><br>
-                    <input type="tel" id="phone_number" name="phone_number" value="+234"><br>
-
-                    <label for="password">Password</label><br>
-                    <input type="password" id="password" name="password" ><br>
-                
-                    <label>Set Profile Pictures</label>
-                    <input type="file" accept="image/*" name="profile_pics"><br>
-
-                    <button class="btn btn-primary" id="submit" type="submit" name="submit">SIGN UP</button>
-
+                            <label>Last Name</label>
+                            <input type="text" name="last_name">
+                        </div>
+                    </div>
+                    <div class="field input">
+                        <label for="">Username</label>
+                        <input type="text" name="username">
+                    </div>
+                    <div class="field input">
+                        <label for="">Email</label>
+                        <input type="text" name="email">
+                    </div>
+                    <div class="field input">
+                        <label for="">Password</label>
+                        <input type="password" name="password">
+                    </div> 
+                    <div class="field image">
+                        <label>Set Profile Picture</label>
+                        <input type="file" accept="image/*" name="profile_pics" required>
+                    </div>
+                    <div class="field button">
+                        <input type="submit" id="submit" name="submit" value="SIGN UP">
+                    </div>
                 </form>
-                <a href="signin.php"><button class="btn btn-default">or sign in here</button></a>
-        </div>
-    </div>
-    <script src="javascript/signup.js"></script>
+                <div class="link">Already signed up? <a href="signin.php">sign in instead</a></div>
+        </section>
+
+    </main>
+<script src="javascript/signup.js"></script>
 </body>
 </html>
-

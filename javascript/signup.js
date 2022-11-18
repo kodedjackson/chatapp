@@ -1,14 +1,16 @@
-const form = document.getElementById('form'),
-submitBtn = form.querySelector('form button'),
-errorText= document.getElementById('error-txt');
+const form = document.querySelector(".signup form"),
+submitBtn = form.querySelector('.button input');
+
+
+errorText= document.querySelector(".error-txt");
 
 
 form.onsubmit = (e) =>{
-    e.preventDefault();
+ e.preventDefault();
 
 }
 
-submitBtn.onclick = ()=>{
+submitBtn.onclick =() =>{
     let xhr = new XMLHttpRequest(); 
     xhr.open("POST", "add_user.php", true);
     xhr.onload = ()=>{
@@ -17,9 +19,11 @@ submitBtn.onclick = ()=>{
               let data = xhr.response;
               console.log(data)
               if(data == "success"){
-                location.href="chathome.php";
+                location.href="chats.php";
               }else{
                 errorText.textContent = data;
+                errorText.style.display = 'block';
+                
               }
           }
       }

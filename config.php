@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 //constants to avoid repeating variables
 define('dbHost', 'localhost');
 define('dbUsername','root');
