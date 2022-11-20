@@ -41,7 +41,7 @@ if(!empty($first_name) && !empty($last_name) && !empty($username) && !empty($ema
 
                     /* echo $end."<br>"; */
                     print_r( $explode."<br>");
-                    /*echo $image_name."<br>"; */
+                    $image_name."<br>";
                     die();
 
                     $new_image_name = $username.'.'.$end;
