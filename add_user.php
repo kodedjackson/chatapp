@@ -40,9 +40,9 @@ if(!empty($first_name) && !empty($last_name) && !empty($username) && !empty($ema
                     $end = end($explode);
 
                     /* echo $end."<br>"; */
-                    print_r( $explode."<br>");
+                    /* print_r( $explode."<br>");
                     $image_name."<br>";
-                    die();
+                    die(); */
 
                     $new_image_name = $username.'.'.$end;
                     //move the image to a new folder
