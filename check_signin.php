@@ -15,9 +15,8 @@ if(!empty($email && !empty($password))){
             if(mysqli_num_rows($query) > 0 ){
                 $rows = mysqli_fetch_array($query);
                 $username = $rows['username'];
-                $_SESSION['name'] = $username;
+                $_SESSION['username'] = $username;
                 echo "success";
-
             }else{
                 echo "Incorrect password or email";
             }
@@ -26,11 +25,6 @@ if(!empty($email && !empty($password))){
     }else{
         echo "This is not a valid email";
     }
-
-
-
-
-
 }else{
     echo "All input field required!";
 }

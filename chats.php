@@ -1,21 +1,20 @@
+
+
 <?php include 'config.php';
 
 
-$username = $_SESSION['name'];
+$username = $_SESSION['username'];
 
 ;?>
 <?php
 
 //check for the username data
+$select =mysqli_query($conn, "SELECT * FROM users_tbl WHERE username='$username'");
 
-$sql = mysqli_query($conn, "SELECT * FROM `users_tbl` WHERE 'username'='$username'");
-
-if(mysqli_num_rows($sql) > 0){
-    $rows = mysqli_fetch_assoc($sql);
-    echo $email = $rows['email'];
-    
-}
-
+$rows = mysqli_fetch_assoc($select);
+$email =$rows['email'];
+$status = $rows['status'];
+$image_name = $rows['img_name']
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,20 +32,19 @@ if(mysqli_num_rows($sql) > 0){
     <main class="wrapper">
         <header>
             <nav class="nav">
-                <a href="chats.php"><li>HOME</li></a>
-                <a href="chats.php"><li>CHAT</li></a>
-                <a href="groups.php"><li>GROUPS</li></a>
-                <a href="profile.php"><li>PROFILE</li></a>   
+                <a href="chats.php"><li>CHATS</li></a>
+                <a href="groups.php"><li style="color: #b8b0b0;">GROUPS</li></a>
+                <a href="profile.php"><li style="color: #b8b0b0;">PROFILE</li></a>   
             </nav>
         </header>
         <div class="error-txt">ERROR</div>
         <section class="users">
             <header>
                 <div class="content">
-                    <img src="img/users/Kodedjackson.jpeg">
+                    <img src="<?php echo HOMEPAGE?>img/users/<?php echo $image_name?>" >
                     <div class="details">
                         <span><?php echo $username; ?></span>
-                        <p>Online</p>
+                        <p><?php echo $status;?></p>
                     </div>
                 </div>
             
@@ -58,94 +56,14 @@ if(mysqli_num_rows($sql) > 0){
                 <button><i class="fas fa-search"></i></button>
             </div>
           <div class="users-list">
-                <a href="#">
-                    <div class="content">
-                        <img src="img/users/Kodedjackson.jpeg" alt="">
-                        <div class="details">
-                            <span>Kodedjackson</span>
-                            <p>This is a test Message</p>
-                        </div>
-                    </div>
-                    <div class="status"><i class="fas fa-circle"></i></div>
-                </a> 
-                <a href="#">
-                    <div class="content">
-                        <img src="img/users/Kodedjackson.jpeg" alt="">
-                        <div class="details">
-                            <span>Kodedjackson</span>
-                            <p>This is a test Message</p>
-                        </div>
-                    </div>
-                    <div class="status"><i class="fas fa-circle"></i></div>
-                </a>
-                <a href="#">
-                    <div class="content">
-                        <img src="img/users/Kodedjackson.jpeg" alt="">
-                        <div class="details">
-                            <span>Kodedjackson</span>
-                            <p>This is a test Message</p>
-                        </div>
-                    </div>
-                    <div class="status"><i class="fas fa-circle"></i></div>
-                </a>
-                <a href="#">
-                    <div class="content">
-                        <img src="img/users/Kodedjackson.jpeg" alt="">
-                        <div class="details">
-                            <span>Kodedjackson</span>
-                            <p>This is a test Message</p>
-                        </div>
-                    </div>
-                    <div class="status"><i class="fas fa-circle"></i></div>
-                </a>
-                <a href="#">
-                    <div class="content">
-                        <img src="img/users/Kodedjackson.jpeg" alt="">
-                        <div class="details">
-                            <span>Kodedjackson</span>
-                            <p>This is a test Message</p>
-                        </div>
-                    </div>
-                    <div class="status"><i class="fas fa-circle"></i></div>
-                </a>
-                <a href="#">
-                    <div class="content">
-                        <img src="img/users/Kodedjackson.jpeg" alt="">
-                        <div class="details">
-                            <span>Kodedjackson</span>
-                            <p>This is a test Message</p>
-                        </div>
-                    </div>
-                    <div class="status"><i class="fas fa-circle"></i></div>
-                </a>
-
-                <a href="#">
-                    <div class="content">
-                        <img src="img/users/Kodedjackson.jpeg" alt="">
-                        <div class="details">
-                            <span>Kodedjackson</span>
-                            <p>This is a test Message</p>
-                        </div>
-                    </div>
-                    <div class="status"><i class="fas fa-circle"></i></div>
-                </a>
-                <a href="#">
-                    <div class="content">
-                        <img src="img/users/Kodedjackson.jpeg" alt="">
-                        <div class="details">
-                            <span>Kodedjackson</span>
-                            <p>This is a test Message</p>
-                        </div>
-                    </div>
-                    <div class="status"><i class="fas fa-circle"></i></div>
-                </a>
+                
                 
 
             </div>
         </section>
               
     </main>
-    <script src="javascript/show-search.js"></script>
+    <script src="javascript/users.js"></script>
     
 </body>
 </html>

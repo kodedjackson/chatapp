@@ -14,10 +14,9 @@
     <main class="wrapper">
         <header>
             <nav class="nav">
-                <a href="chats.php"><li>HOME</li></a>
-                <a href="chats.php"><li>CHAT</li></a>
+                <a href="chats.php"><li style="color: #b8b0b0;">CHAT</li></a>
                 <a href="groups.php"><li>GROUPS</li></a>
-                <a href="profile.php"><li>PROFILE</li></a>   
+                <a href="profile.php"><li style="color: #b8b0b0;">PROFILE</li></a>   
             </nav>
         </header>
         <div class="error-txt">ERROR</div>

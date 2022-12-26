@@ -1,3 +1,22 @@
+
+
+<?php 
+//include('partials/check.php');
+include('config.php');
+
+
+$getid = $_GET['unique_id'];
+//Get Users Details
+
+$get_user_details = mysqli_query($conn, "SELECT * FROM users_tbl WHERE unique_id='$getid'");
+if(mysqli_num_rows($get_user_details) > 0){
+    $rows = mysqli_fetch_assoc($get_user_details);
+    $usernameid = $rows['username'];
+    $new_image_name = $rows['img_name'];
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,25 +33,25 @@
     <main class="wrapper">
         <header>
             <nav class="nav">
-                <a href="#"><li>HOME</li></a>
-                <a href="#"><li>CHAT</li></a>
-                <a href="#"><li>GROUPS</li></a>
-                <img src="img/users/Kodedjackson.jpeg" alt="">    
+                <a href="chats.php"><li>CHAT</li></a>
+                <a href="groups.php"><li>GROUPS</li></a>
+                <a href="profile.php"><li>PROFILE</li></a>   
+                <img src="img/users/kodedjackson.jpg" alt="">    
             </nav>
         </header>
         <div class="error-txt">ERROR</div>
         <section class="chat-area">
             <header>
                 <div class="content">
-                    <i class="fas fa-arrow-left"></i>
-                    <img src="img/users/Kodedjackson.jpeg">
+                    <a href="chats.php"><i class="fas fa-arrow-left"></i></a>
+                    <img src="img/users/<?php echo $new_image_name; ?>">
                     <div class="details">
-                        <span>Kodedjackson</span>
-                        <p>Online</p>
+                        <span><?php echo $usernameid ;?></span>
+                        <p><?php echo $rows['status'];?></p>
                     </div>
                 </div>
             
-                <a href="#" class="logout">Logout</a>
+                <!-- <a href="<?php echo HOMEPAGE?>logout.php" class="logout">Logout</a> -->
             </header>
             <div class="chat-box">
                 <div class="chat outgoing">
@@ -41,7 +60,7 @@
                     </div>
                 </div>
                 <div class="chat incoming">
-                    <img src="img/users/Kodedjackson.jpeg">
+                    <img src="img/users/<?php echo $new_image_name; ?>"">
                     <div class="details">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae optio officia laudantium eius accusamus sit, dolorem corrupti tempore voluptatem facere mollitia nulla ad perspiciatis accusantium cupiditate distinctio. Rem, voluptatem odit.</p>
                     </div>
@@ -52,7 +71,7 @@
                     </div>
                 </div>
                 <div class="chat incoming">
-                    <img src="img/users/Kodedjackson.jpeg">
+                    <img src="img/users/<?php echo $new_image_name; ?>">
                     <div class="details">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae optio officia laudantium eius accusamus sit, dolorem corrupti tempore voluptatem facere mollitia nulla ad perspiciatis accusantium cupiditate distinctio. Rem, voluptatem odit.</p>
                     </div>

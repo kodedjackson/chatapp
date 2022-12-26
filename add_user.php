@@ -48,20 +48,23 @@ if(!empty($first_name) && !empty($last_name) && !empty($username) && !empty($ema
                     //move the image to a new folder
                     $source_path = $tmp_name;
                     $destination_path = "img/users/".$new_image_name;
+                    $status = "Online";
 
                     move_uploaded_file($source_path, $destination_path);
-                    $unique_id = time().$username;
+                    $unique_id = time();
                     $insertData = mysqli_query($conn, "INSERT INTO `users_tbl`(`unique_id`, `first_name`, 
-                                                                    `last_name`, `username`, `email`, `img_name`, `password`) 
+                                                                    `last_name`, `username`, `email`, `img_name`, `password`, `status`) 
                                                                     VALUES ('$unique_id','$first_name','$last_name',
-                                                                    '$username','$email','$new_image_name','$password')");
+                                                                    '$username','$email','$new_image_name','$password', '$status')");
 
                     if($insertData==True){
                         $saveSession = mysqli_query($conn, "SELECT * FROM users_tbl WHERE username='$username'");
                         if(mysqli_num_rows($saveSession) > 0){
                             $rows = mysqli_fetch_assoc($saveSession);
                             $usernameid = $rows['username'];
+                            $getid = $rows['id'];
                             session_start();
+                            $_SESSION['id'] = $getid;
                             $_SESSION['username'] = $usernameid;
                             echo "success";
                         }

@@ -149,7 +149,7 @@ body{
 
 
 .wrapper .nav img{
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 50%;
     height: 50px;
     width: 50px;
@@ -225,6 +225,7 @@ body{
 
 .users .search .text{
     font-size: 18px;
+    color: #fff;
 }
 
 
