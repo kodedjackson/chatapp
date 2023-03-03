@@ -23,7 +23,7 @@
         <section class="users">
             <header>
                 <div class="content">
-                    <img src="img/users/Kodedjackson.jpeg">
+                <img src="<?php echo HOMEPAGE?>img/users/<?php echo $image_name?>" >
                     <div class="details">
                         <span>Kodedjackson</span>
                         <p>Online</p>

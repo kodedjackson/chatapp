@@ -1,7 +1,9 @@
 <?php 
+include 'config.php';
 include('partials/check.php');
 
 $username = $_SESSION['username'];
+
 //Get Users Details
 
 $get_user_details = mysqli_query($conn, "SELECT * FROM users_tbl WHERE username='$username'");

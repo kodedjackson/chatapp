@@ -1,12 +1,7 @@
-
-
 <?php include 'config.php';
 
 
 $username = $_SESSION['username'];
-
-;?>
-<?php
 
 //check for the username data
 $select =mysqli_query($conn, "SELECT * FROM users_tbl WHERE username='$username'");
@@ -47,8 +42,9 @@ $image_name = $rows['img_name']
                         <p><?php echo $status;?></p>
                     </div>
                 </div>
+                <a href="logout.php?user_id=<?php echo $rows['unique_id']; ?> " class="logout">Logout</a>
+                <!-- <?php echo $_SESSION['unique_id'];?> -->
             
-                <a href="logout.php" class="logout">Logout</a>
             </header>
             <div class="search">
                 <span class="text">Select a User to start Search</span>

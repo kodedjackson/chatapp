@@ -369,9 +369,9 @@ body{
 .chat-box{
     padding: 10px 30px 20px 30px ;
     height: 400px;
-    background: #f7f7f7;
-    overflow-y: auto;
-    border-radius: 20px;
+    /* background: red; */
+    overflow: auto;
+    border-radius: 40px;
 }
 .chat-box::-webkit-scrollbar{
     display: none;

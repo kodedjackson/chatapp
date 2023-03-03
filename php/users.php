@@ -1,7 +1,8 @@
 <?php 
 //session_start();
 include_once('../config.php');
-$sql = mysqli_query($conn, "SELECT * FROM users_tbl");
+$outgoing_id = $_SESSION['unique_id'];
+$sql = mysqli_query($conn, "SELECT * FROM users_tbl WHERE NOT unique_id = {$outgoing_id}");
 
 $output = '';
 

@@ -1,3 +1,12 @@
+<?php 
+/* require_once 'config.php';
+
+if(isset($_SESSION['unique_id'])){
+    header('location: chats.php'); 
+} */
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +41,7 @@
                         <input type="submit" accept="images/" id="submit" name="submit" value="SIGN IN">
                     </div>
                 </form>
-                <div class="link">Don't have an account? <a href="signup.php">sign up instead</a></div>
+                <div class="link">Don't have an account? <a href="index.php">sign up instead</a></div>
         </section>
 
     </main>

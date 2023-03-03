@@ -14,9 +14,18 @@ if(!empty($email && !empty($password))){
         if($query == TRUE){
             if(mysqli_num_rows($query) > 0 ){
                 $rows = mysqli_fetch_array($query);
-                $username = $rows['username'];
-                $_SESSION['username'] = $username;
-                echo "success";
+                $status = "Active now";
+                $sql3 = mysqli_query($conn, "UPDATE users_tbl SET `status` = '{$status}' WHERE unique_id = {$rows['unique_id']}");
+                if($sql3 == TRUE){
+                    $username = $rows['username'];
+                    $getMyId = $rows['user_id'];
+                    $uniqueID = $rows['unique_id'];
+                    $_SESSION['unique_id'] = $uniqueID;
+                    $_SESSION['id'] = $getMyId;
+                    $_SESSION['username'] = $username;
+                    echo "success";
+                }
+                
             }else{
                 echo "Incorrect password or email";
             }

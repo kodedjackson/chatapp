@@ -1,3 +1,5 @@
+console.log('Connected');
+
 const form = document.querySelector(".signup form"),
 submitBtn = form.querySelector('.button input');
 
@@ -16,9 +18,9 @@ submitBtn.onclick =() =>{
     xhr.onload = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){
-              let data = xhr.response;
+              let data = xhr.responseText;
               console.log(data)
-              if(data == "success"){
+              if(data === "success"){
                 location.href="chats.php";
               }else{
                 errorText.textContent = data;
@@ -31,3 +33,5 @@ submitBtn.onclick =() =>{
     let formData = new FormData(form);
     xhr.send(formData);
 }
+
+console.log('Connected');

@@ -6,7 +6,8 @@ $username = mysqli_real_escape_string($conn, $_POST['username']);
 $email = mysqli_real_escape_string($conn,$_POST['email']);
 $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-if(!empty($first_name) && !empty($last_name) && !empty($username) && !empty($email) && !empty($password)){
+
+if(!empty ($first_name && !empty ($last_name) && !empty ($username) && !empty($email) && !empty ($password))){
     //check if the email is in the datase
     //filter the email
     if(filter_var($email, FILTER_VALIDATE_EMAIL)){
@@ -19,7 +20,7 @@ if(!empty($first_name) && !empty($last_name) && !empty($username) && !empty($ema
             //means the email is not signed up yet
             //check for username
             $checkUsername = mysqli_query($conn, "SELECT * FROM `users_tbl` WHERE username='$username' ");
-            if(mysqli_num_rows($checkUsername) > 0){
+            if(mysqli_num_rows($checkUsername) == 1){
                 $suggested_name = $username.date("h");
                 echo "$username already exist, $suggested_name is available";
             }else{
@@ -27,7 +28,7 @@ if(!empty($first_name) && !empty($last_name) && !empty($username) && !empty($ema
                 //check if image is set
                 /* print_r($_FILES['profile_pics']['name']);
                 die(); */
-                if(isset($_FILES['profile_pics'])){
+                if(isset($_FILES['profile_pics']['name']) && !empty($_FILES['profile_pics']['name'])){
                     //everything is set, time to update database
                     //first upload the pictures and set it name
                     $image_name = $_FILES['profile_pics']['name'];
@@ -62,11 +63,17 @@ if(!empty($first_name) && !empty($last_name) && !empty($username) && !empty($ema
                         if(mysqli_num_rows($saveSession) > 0){
                             $rows = mysqli_fetch_assoc($saveSession);
                             $usernameid = $rows['username'];
-                            $getid = $rows['id'];
-                            session_start();
-                            $_SESSION['id'] = $getid;
+                            $getMyId = $rows['user_id'];
+                            $uniqueID = $rows['unique_id'];
+                            $_SESSION['id'] = $getMyId;
+                            $_SESSION['unique_id'] = $uniqueID;
                             $_SESSION['username'] = $usernameid;
-                            echo "success";
+
+                            if(isset($_SESSION['username'])){
+                                echo "success";
+
+                            }
+                            
                         }
 
                         

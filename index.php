@@ -1,21 +1,11 @@
+<!-- <?php
+/* require_once 'config.php';
 
+if(isset($_SESSION['unique_id'])){
+    header('location: chats.php'); 
+} */
 
-<?php 
-//include('partials/check.php');
-include('config.php');
-
-
-$getid = $_GET['unique_id'];
-//Get Users Details
-
-$get_user_details = mysqli_query($conn, "SELECT * FROM users_tbl WHERE unique_id='$getid'");
-if(mysqli_num_rows($get_user_details) > 0){
-    $rows = mysqli_fetch_assoc($get_user_details);
-    $usernameid = $rows['username'];
-    $new_image_name = $rows['img_name'];
-
-}
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,60 +20,50 @@ if(mysqli_num_rows($get_user_details) > 0){
     <title>PlayMate</title>
 </head>
 <body>
-    <main class="wrapper">
+<main class="wrapper">
         <header>
             <nav class="nav">
-                <a href="chats.php"><li>CHAT</li></a>
-                <a href="groups.php"><li>GROUPS</li></a>
-                <a href="profile.php"><li>PROFILE</li></a>   
-                <img src="img/users/kodedjackson.jpg" alt="">    
+                <h1>PLAYMATE</h1>    
             </nav>
         </header>
-        <div class="error-txt">ERROR</div>
-        <section class="chat-area">
-            <header>
-                <div class="content">
-                    <a href="chats.php"><i class="fas fa-arrow-left"></i></a>
-                    <img src="img/users/<?php echo $new_image_name; ?>">
-                    <div class="details">
-                        <span><?php echo $usernameid ;?></span>
-                        <p><?php echo $rows['status'];?></p>
+        <div class="error-txt"></div>
+        <section class="form signup">
+                <form action="#" enctype="multipart/form-data" id="form" name="form">
+                    <div class="name-details">
+                        <div class="field input">
+                            <label >First Name</label>
+                            <input type="text" name="first_name">
+                        </div>
+                        <div class="field input">
+
+                            <label>Last Name</label>
+                            <input type="text" name="last_name">
+                        </div>
                     </div>
-                </div>
-            
-                <!-- <a href="<?php echo HOMEPAGE?>logout.php" class="logout">Logout</a> -->
-            </header>
-            <div class="chat-box">
-                <div class="chat outgoing">
-                    <div class="details">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae optio officia laudantium eius accusamus sit, dolorem corrupti tempore voluptatem facere mollitia nulla ad perspiciatis accusantium cupiditate distinctio. Rem, voluptatem odit.</p>
+                    <div class="field input">
+                        <label for="">Username</label>
+                        <input type="text" name="username">
                     </div>
-                </div>
-                <div class="chat incoming">
-                    <img src="img/users/<?php echo $new_image_name; ?>"">
-                    <div class="details">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae optio officia laudantium eius accusamus sit, dolorem corrupti tempore voluptatem facere mollitia nulla ad perspiciatis accusantium cupiditate distinctio. Rem, voluptatem odit.</p>
+                    <div class="field input">
+                        <label for="">Email</label>
+                        <input type="text" name="email" required>
                     </div>
-                </div>
-                <div class="chat outgoing">
-                    <div class="details">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae optio officia laudantium eius accusamus sit, dolorem corrupti tempore voluptatem facere mollitia nulla ad perspiciatis accusantium cupiditate distinctio. Rem, voluptatem odit.</p>
+                    <div class="field input">
+                        <label for="">Password</label>
+                        <input type="password" name="password" required >
+                    </div> 
+                    <div class="field image">
+                        <label>Set Profile Picture</label>
+                        <input type="file" accept="image/*" name="profile_pics" required>
                     </div>
-                </div>
-                <div class="chat incoming">
-                    <img src="img/users/<?php echo $new_image_name; ?>">
-                    <div class="details">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae optio officia laudantium eius accusamus sit, dolorem corrupti tempore voluptatem facere mollitia nulla ad perspiciatis accusantium cupiditate distinctio. Rem, voluptatem odit.</p>
+                    <div class="field button">
+                        <input type="submit" id="submit" name="submit" value="SIGN UP">
                     </div>
-                </div>
-            </div>
-            <form action="#" class="typing-area">
-                <input type="text" placeholder="Type a message here...">
-                <button><i class="fab fa-telegram-plane"></i></button>
-            </form>
+                </form>
+                <div class="link">Already signed up? <a href="signin.php">sign in instead</a></div>
         </section>
+
     </main>
-    <script src="javascript/signup.js"></script>
-    
+<script src="javascript/signup.js"></script>
 </body>
 </html>
