@@ -50,7 +50,7 @@ if(mysqli_num_rows($get_loggedin_user) > 0){
                 <a href="chats.php"><li>CHAT</li></a>
                 <a href="groups.php"><li>GROUPS</li></a>
                 <a href="profile.php"><li>PROFILE</li></a>   
-                <img src="img/users/kodedjackson.jpg" alt="">    
+                <img src="img/users/<?php echo $new_image_name ;?>" alt="<?php echo $new_image_name;?>">    
             </nav>
         </header>
         <div class="error-txt">ERROR</div>
@@ -65,7 +65,7 @@ if(mysqli_num_rows($get_loggedin_user) > 0){
                     </div>
                 </div>
             
-                <!-- <a href="<?php echo HOMEPAGE?>logout.php" class="logout">Logout</a> -->
+                <a href="logout.php?user_id=<?php echo $rows['unique_id']; ?> " class="logout">Logout</a>
             </header>
             <div class="chat-box" id="chat-box">
             </div>

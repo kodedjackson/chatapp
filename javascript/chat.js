@@ -28,7 +28,7 @@ sendBtn.onclick =() =>{
     xhr.send(formData);
 
     inputField.value = " ";
-    scrolltoBottom();
+    scrollToBottom();
     //console.log('this funtion is not active');
 
 }
@@ -53,7 +53,7 @@ setInterval(()=>{
                 chatBox.innerHTML = data;
                 if(!chatBox.classList.contains('active')){// if the active clas is set, it won't auto scroll
                     
-                    scrolltoBottom();
+                    scrollToBottom();
                 }
             }
         }
@@ -62,6 +62,6 @@ setInterval(()=>{
     xhr.send(formData);
 }, 500) //create this request every 500ms
 
-function scrolltoBottom(){
+function scrollToBottom(){
     chatBox.scrollTop = chatBox.scrollHeight;
 }
