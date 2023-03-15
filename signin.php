@@ -1,9 +1,9 @@
 <?php 
-/* require_once 'config.php';
+require_once 'config.php';
 
 if(isset($_SESSION['unique_id'])){
     header('location: chats.php'); 
-} */
+}
 
 ?>
 

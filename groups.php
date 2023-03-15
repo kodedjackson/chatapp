@@ -1,3 +1,16 @@
+<?php include 'config.php';
+
+
+$username = $_SESSION['username'];
+
+//check for the username data
+$select =mysqli_query($conn, "SELECT * FROM users_tbl WHERE username='$username'");
+
+$rows = mysqli_fetch_assoc($select);
+$email =$rows['email'];
+$status = $rows['status'];
+$image_name = $rows['img_name']
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +27,8 @@
     <main class="wrapper">
         <header>
             <nav class="nav">
-                <a href="chats.php"><li style="color: #b8b0b0;">CHAT</li></a>
-                <a href="groups.php"><li>GROUPS</li></a>
+                <a href="chats.php"><li>CHATS</li></a>
+                <a href="groups.php"><li style="color: #b8b0b0;">GROUPS</li></a>
                 <a href="profile.php"><li style="color: #b8b0b0;">PROFILE</li></a>   
             </nav>
         </header>
@@ -23,14 +36,15 @@
         <section class="users">
             <header>
                 <div class="content">
-                <img src="<?php echo HOMEPAGE?>img/users/<?php echo $image_name?>" >
+                    <img src="<?php echo HOMEPAGE?>img/users/<?php echo $image_name?>" >
                     <div class="details">
-                        <span>Kodedjackson</span>
-                        <p>Online</p>
+                        <span><?php echo $username; ?></span>
+                        <p><?php echo $status;?></p>
                     </div>
                 </div>
+                <a href="logout.php?user_id=<?php echo $rows['unique_id']; ?> " class="logout">Logout</a>
+                <!-- <?php echo $_SESSION['unique_id'];?> -->
             
-                <a href="#" class="logout">Logout</a>
             </header>
             <div class="search">
                 <span class="text">Select a Group or start Search</span>
@@ -38,9 +52,9 @@
                 <button><i class="fas fa-search"></i></button>
             </div>
             <div class="users-list">
-                <a href="#">
+                <a href="<?php echo HOMEPAGE . 'lagos.php' ;?>">
                     <div class="content">
-                        <img src="img/users/Kodedjackson.jpeg" alt="">
+                        <img src="images/lagos.jpg" alt="">
                         <div class="details">
                             <span>Lagos</span>
                             <p>Available for lagos residents only</p>
@@ -50,7 +64,7 @@
                 </a> 
                 <a href="#">
                     <div class="content">
-                        <img src="img/users/Kodedjackson.jpeg" alt="">
+                        <img src="images/woman.webp" alt="">
                         <div class="details">
                             <span>Queens Only</span>
                             <p>To the ones who rule the world</p>
@@ -60,7 +74,7 @@
                 </a>
                 <a href="#">
                     <div class="content">
-                        <img src="img/users/Kodedjackson.jpeg" alt="">
+                        <img src="images/men.jpg" alt="">
                         <div class="details">
                             <span>Kings Only</span>
                             <p>The protectors and providers</p>
@@ -70,7 +84,7 @@
                 </a>
                 <a href="#">
                     <div class="content">
-                        <img src="img/users/Kodedjackson.jpeg" alt="">
+                        <img src="images/global.jpg" alt="">
                         <div class="details">
                             <span>International</span>
                             <p>For the International community</p>

@@ -1,11 +1,11 @@
-<!-- <?php
-/* require_once 'config.php';
+<?php
+require_once 'config.php';
 
 if(isset($_SESSION['unique_id'])){
     header('location: chats.php'); 
-} */
+}
 
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en">

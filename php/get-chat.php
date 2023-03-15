@@ -4,6 +4,7 @@ include('../config.php');
 $outgoing_id = mysqli_real_escape_string($conn, $_POST['outgoing_id']);
 $incoming_id = mysqli_real_escape_string($conn, $_POST['incoming_id']);
 $message = mysqli_real_escape_string($conn, $_POST['message']);
+
 $output = '';
 
 
@@ -20,7 +21,8 @@ if(mysqli_num_rows($query) > 0){
            
             $output .= '<div class="chat outgoing">
                             <div class="details">
-                                <p>'. $rows['msg'] . '</p>
+                                <p>'. $rows['msg'] . $rows['time'] . '</p>
+                                <em>' . $rows['time'] .  '</em>
                             </div>
                         </div>  
             ';
@@ -30,6 +32,7 @@ if(mysqli_num_rows($query) > 0){
                         <img src="img/users/' . $rows['img_name'] . ' ">
                             <div class="details">
                                 <p>' . $rows['msg'] . '</p>
+                                <em>' . $rows['time'] .  '</em>
                             </div>
                         </div>
             

@@ -200,8 +200,9 @@ body{
 }
 
 :is(.users header, .users-list ) .details p{
-    color: #333;
+    color: red;
 }
+
 
 .users .logout{
     background: var(--color-red);
@@ -432,6 +433,15 @@ body{
     border-radius: 18px 18px 18px 0px;
 }
 
+
+.incoming .details em, .outgoing .details em {
+    color: red;
+    font-size: 9px;
+    align-self: left;
+    text-align: center;
+}
+
+
 .chat-area .typing-area{
     padding: 18px 30px;
 }
@@ -461,3 +471,36 @@ body{
 
 
 /* GROUP CHAT STYLE */
+
+
+
+/* PROFILE STYLE */
+
+.chat-area .profile-area{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.chat-area .profile-area img{
+    width: 170px;
+}   
+
+.chat-area .profile-area .location{
+    color: green;
+    margin: 10px 0;
+    border-radius: 15px;
+    border: 2px green solid;padding: 5px 20px;
+}
+
+.chat-area .profile-area label{
+    font-weight: 600;
+    margin: 5px 0 0;
+}
+
+.chat-area .profile-area p{
+    padding: 0px 30px;
+    background: #d2d2d2;
+
+}

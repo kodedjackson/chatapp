@@ -43,43 +43,32 @@ if(mysqli_num_rows($get_user_details) > 0){
             <header>
                 <div class="content">
                     <i class="fas fa-arrow-left"></i>
-                    <img src="img/users/Kodedjackson.jpeg">
-                    <div class="details">
-                        <span>Kodedjackson</span>
-                        <p>Online</p>
+                    <!-- <img src="img/users/Kodedjackson.jpeg">
+                    <div class="details"> -->
+                        <!-- <span>Kodedjackson</span>
+                        <p>Online</p> -->
                     </div>
                 </div>
+                
+
             
                 <a href="<?php echo HOMEPAGE?>logout.php" class="logout">Logout</a>
             </header>
-            <div class="chat-box">
-                <div class="chat outgoing">
-                    <div class="details">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae optio officia laudantium eius accusamus sit, dolorem corrupti tempore voluptatem facere mollitia nulla ad perspiciatis accusantium cupiditate distinctio. Rem, voluptatem odit.</p>
-                    </div>
-                </div>
-                <div class="chat incoming">
-                    <img src="img/users/Kodedjackson.jpeg">
-                    <div class="details">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae optio officia laudantium eius accusamus sit, dolorem corrupti tempore voluptatem facere mollitia nulla ad perspiciatis accusantium cupiditate distinctio. Rem, voluptatem odit.</p>
-                    </div>
-                </div>
-                <div class="chat outgoing">
-                    <div class="details">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae optio officia laudantium eius accusamus sit, dolorem corrupti tempore voluptatem facere mollitia nulla ad perspiciatis accusantium cupiditate distinctio. Rem, voluptatem odit.</p>
-                    </div>
-                </div>
-                <div class="chat incoming">
-                    <img src="img/users/Kodedjackson.jpeg">
-                    <div class="details">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae optio officia laudantium eius accusamus sit, dolorem corrupti tempore voluptatem facere mollitia nulla ad perspiciatis accusantium cupiditate distinctio. Rem, voluptatem odit.</p>
-                    </div>
-                </div>
+            <div class="profile-area up">
+                <img src="img/users/kodedjackson.jpg">
+                <span class="location">Lagos</span>
             </div>
-            <form action="#" class="typing-area">
-                <input type="text" placeholder="Type a message here...">
-                <button><i class="fab fa-telegram-plane"></i></button>
-            </form>
+            <div class="profile-area body">
+                <label>Full name</label>
+                <span>Jackson Jackson</span>
+                <label>Username</label>
+                <span>Kodedjackson</span>
+                <!--<label>About</label>
+                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam qui et perferendis aperiam cumque perspiciatis necessitatibus magni blanditiis dignissimos earum facilis repudiandae, iusto enim dolorem saepe ullam! Architecto, ea cupiditate.</p> -->
+                <label>Email</label>
+                <span>kodedjackson@gmail.com</span>
+            </div>
+
         </section>
     </main>
     <script src="javascript/signup.js"></script>
