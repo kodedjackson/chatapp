@@ -6,7 +6,7 @@ session_start();
 //constants to avoid repeating variables
 define('dbHost', 'localhost');
 define('dbUsername','vibrxxrt_playmate');
-define('dbPassword','toyiN080 .');
+define('dbPassword','toyiN0 .');
 define('dbDatabase','kodedchat');
 define('HOMEPAGE', 'http://playmate.kodedjackson.com');
 
