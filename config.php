@@ -4,7 +4,7 @@ use GeoIp2\Record\Location;
 
 session_start();
 //constants to avoid repeating variables
-define('dbHost', 'localhost:3306');
+define('dbHost', 'localhost');
 define('dbUsername','vibrxxrt_playmate');
 define('dbPassword','toyiN080 .');
 define('dbDatabase','kodedchat');
