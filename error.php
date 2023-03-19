@@ -94,10 +94,13 @@ $sender_id = $rows['unique_id'];
     color: red;
     justify-content: center;
     text-align: center;
-    color: red;
-    font-size: 32px;
+    color: white;
+    font-size: 22px;
+    background-color: red;
+    border-radius: 20px;
+    margin: 20px 0;
     transition: all 0.3 ease;
-    z-index: 200;">COMING SOON</div>
+    z-index: 200;">LOCKED! <br>COMING SOON</div>
             </div>
             
     
