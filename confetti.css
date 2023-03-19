@@ -1,0 +1,22 @@
+.confetti {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    animation: confetti 2s ease-out forwards;
+    transform: rotate(45deg);
+    background-color: #f44336;
+  }
+  
+  @keyframes confetti {
+    0% {
+      transform: rotate(45deg) translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(45deg) translateY(500px);
+      opacity: 0;
+    }
+  }
+  

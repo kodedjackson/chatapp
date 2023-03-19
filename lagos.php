@@ -1,16 +1,3 @@
-<?php 
-include('config.php');
-
-$username = $_SESSION['username'];
-
-//check for the username data
-$select =mysqli_query($conn, "SELECT * FROM users_tbl WHERE username='$username'");
-
-$rows = mysqli_fetch_assoc($select);
-
-$sender_id = $rows['unique_id'];
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +10,34 @@ $sender_id = $rows['unique_id'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>PlayMate</title>
 </head>
+
+<?php
+
+
+
+include('config.php');
+include 'location.php';
+$_SESSION['saved_city'] = $saved_city;
+
+
+if($saved_city != 'Lagos'){
+
+    echo '<div class="error-txt">You must reside in Lagos to join this group chat</div>';
+    die();
+
+}
+
+$username = $_SESSION['username'];
+
+//check for the username data
+$select =mysqli_query($conn, "SELECT * FROM users_tbl WHERE username='$username'");
+
+$rows = mysqli_fetch_assoc($select);
+
+$sender_id = $rows['unique_id'];
+
+?>
+
 <body>
     <main class="wrapper">
         <header>

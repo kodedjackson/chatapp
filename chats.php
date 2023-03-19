@@ -36,7 +36,7 @@ $image_name = $rows['img_name']
         <section class="users">
             <header>
                 <div class="content">
-                    <img src="<?php echo HOMEPAGE?>img/users/<?php echo $image_name?>" >
+                    <img src="img/users/<?php echo $image_name?>" >
                     <div class="details">
                         <span><?php echo $username; ?></span>
                         <p><?php echo $status;?></p>

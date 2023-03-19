@@ -1,6 +1,11 @@
 <?php 
+
 include 'config.php';
 include('partials/check.php');
+
+include 'location.php';
+$_SESSION['saved_city'] = $saved_city;
+
 
 $username = $_SESSION['username'];
 
@@ -13,6 +18,7 @@ if(mysqli_num_rows($get_user_details) > 0){
     $new_image_name = $rows['img_name'];
 
     $getid = $rows['user_id'];
+
 }
 ?>
 
@@ -55,8 +61,8 @@ if(mysqli_num_rows($get_user_details) > 0){
                 <a href="<?php echo HOMEPAGE?>logout.php" class="logout">Logout</a>
             </header>
             <div class="profile-area up">
-                <img src="img/users/kodedjackson.jpg">
-                <span class="location">Lagos</span>
+                <img src="img/users/<?php echo $new_image_name?>">
+                <span class="location"><?php echo $saved_city;?></span>
             </div>
             <div class="profile-area body">
                 <label>Full name</label>

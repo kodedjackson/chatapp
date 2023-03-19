@@ -27,8 +27,8 @@ $image_name = $rows['img_name']
     <main class="wrapper">
         <header>
             <nav class="nav">
-                <a href="chats.php"><li>CHATS</li></a>
-                <a href="groups.php"><li style="color: #b8b0b0;">GROUPS</li></a>
+                <a href="chats.php"><li style="color: #b8b0b0;">CHAT</li></a>
+                <a href="groups.php"><li>GROUPS</li></a> 
                 <a href="profile.php"><li style="color: #b8b0b0;">PROFILE</li></a>   
             </nav>
         </header>
@@ -36,7 +36,7 @@ $image_name = $rows['img_name']
         <section class="users">
             <header>
                 <div class="content">
-                    <img src="<?php echo HOMEPAGE?>img/users/<?php echo $image_name?>" >
+                    <img src="img/users/<?php echo $image_name?>" >
                     <div class="details">
                         <span><?php echo $username; ?></span>
                         <p><?php echo $status;?></p>
@@ -62,7 +62,7 @@ $image_name = $rows['img_name']
                     </div>
                     <div class="status"><i class="fas fa-unlock"></i></div>
                 </a> 
-                <a href="#">
+                <a href="error.php">
                     <div class="content">
                         <img src="images/woman.webp" alt="">
                         <div class="details">
@@ -72,7 +72,7 @@ $image_name = $rows['img_name']
                     </div>
                     <div class="status"><i class="fas fa-lock"></i></div>
                 </a>
-                <a href="#">
+                <a href="error.php">
                     <div class="content">
                         <img src="images/men.jpg" alt="">
                         <div class="details">
@@ -82,7 +82,7 @@ $image_name = $rows['img_name']
                     </div>
                     <div class="status"><i class="fas fa-lock"></i></div>
                 </a>
-                <a href="#">
+                <a href="error.php">
                     <div class="content">
                         <img src="images/global.jpg" alt="">
                         <div class="details">
